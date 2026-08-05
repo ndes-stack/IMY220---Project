@@ -1,1 +1,1 @@
-# IMY220---Project
+# IMY 220 Photo Sharing Project
