@@ -1,0 +1,16 @@
+﻿{
+  "name": "forkful-backend",
+  "version": "1.0.0",
+  "description": "Forkful Express Backend for IMY 220 Project D1",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "author": "N'des Junior Lunwgangu (u25069366)",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  }
+}
