@@ -1,4 +1,5 @@
 ﻿import { Link, useNavigate } from 'react-router-dom';
+import { ForkKnifeIcon } from './Icons';
 
 export default function Navbar() {
   const navigate = useNavigate();
@@ -7,8 +8,8 @@ export default function Navbar() {
     <header style={{ backgroundColor: '#ffffff', borderBottom: '1px solid var(--border-color)', position: 'sticky', top: 0, zIndex: 100 }}>
       <nav style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '0.8rem 2rem' }}>
         <div>
-          <Link to="/home" style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--primary-color)', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span>🍴</span>
+          <Link to="/home" style={{ fontSize: '1.6rem', fontWeight: 800, color: 'var(--primary-color)', letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <ForkKnifeIcon size={24} color="var(--primary-color)" />
             <span>FORKFUL</span>
           </Link>
         </div>

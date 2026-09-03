@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CheckIcon, AlertCircleIcon } from './Icons';
 
 export default function SignUpForm() {
   const [username, setUsername] = useState('');
@@ -84,13 +85,15 @@ export default function SignUpForm() {
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', width: '100%' }}>
       {serverMessage && (
-        <div style={{ backgroundColor: '#D8F3DC', color: '#1B4332', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem' }}>
-          ✓ {serverMessage}
+        <div style={{ backgroundColor: '#D8F3DC', color: '#1B4332', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <CheckIcon size={16} color="#1B4332" />
+          <span>{serverMessage}</span>
         </div>
       )}
       {serverError && (
-        <div style={{ backgroundColor: '#FFD6D6', color: '#9B1D20', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem' }}>
-          ✗ {serverError}
+        <div style={{ backgroundColor: '#FFD6D6', color: '#9B1D20', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <AlertCircleIcon size={16} color="#9B1D20" />
+          <span>{serverError}</span>
         </div>
       )}
 

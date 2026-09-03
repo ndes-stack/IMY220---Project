@@ -1,4 +1,5 @@
 ﻿import { useState } from 'react';
+import { HeartIcon } from './Icons';
 
 export default function ImageComponent({ src, alt, initialLikes = 0 }) {
   const [liked, setLiked] = useState(false);
@@ -40,7 +41,7 @@ export default function ImageComponent({ src, alt, initialLikes = 0 }) {
           boxShadow: '0 2px 8px rgba(0,0,0,0.2)'
         }}
       >
-        <span>{liked ? '♥' : '♡'}</span>
+        <HeartIcon size={16} filled={liked} color={liked ? '#ffffff' : '#D9653B'} />
         <span>{likes}</span>
       </button>
     </figure>

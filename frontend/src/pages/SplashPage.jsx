@@ -2,6 +2,7 @@
 import { Link } from 'react-router-dom';
 import LoginForm from '../components/LoginForm';
 import SignUpForm from '../components/SignUpForm';
+import { ForkKnifeIcon, ArrowRightIcon, ChevronLeftIcon, ChevronRightIcon } from '../components/Icons';
 
 export default function SplashPage() {
   const [activeTab, setActiveTab] = useState('login');
@@ -35,7 +36,7 @@ export default function SplashPage() {
       {/* Splash Top Bar */}
       <header style={{ padding: '1.2rem 2.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
         <div style={{ fontSize: '1.8rem', fontWeight: 800, color: 'var(--primary-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <span>🍴</span>
+          <ForkKnifeIcon size={26} color="var(--primary-color)" />
           <span>FORKFUL</span>
         </div>
         <div style={{ display: 'flex', gap: '1rem' }}>
@@ -67,12 +68,13 @@ export default function SplashPage() {
             <span style={{ color: 'var(--primary-color)' }}>has a story.</span>
           </h1>
           <p style={{ fontSize: '1.15rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '1.5rem', maxWidth: '440px' }}>
-            Share your plate to the world — from weeknight pasta to weekend feasts. Discover real reviews, recipes, and home chefs.
+            Share your plate to the world - from weeknight pasta to weekend feasts. Discover real reviews, recipes, and home chefs.
           </p>
 
           <div style={{ display: 'flex', gap: '1rem', marginBottom: '2rem' }}>
-            <Link to="/home" className="btn" style={{ padding: '10px 24px', fontSize: '1rem' }}>
-              Get started →
+            <Link to="/home" className="btn" style={{ padding: '10px 24px', fontSize: '1rem', display: 'inline-flex', alignItems: 'center', gap: '8px' }}>
+              <span>Get started</span>
+              <ArrowRightIcon size={16} />
             </Link>
           </div>
 
@@ -132,15 +134,15 @@ export default function SplashPage() {
 
             <button
               onClick={prevSlide}
-              style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', cursor: 'pointer', fontWeight: 'bold' }}
+              style={{ position: 'absolute', top: '50%', left: '12px', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#333' }}
             >
-              ‹
+              <ChevronLeftIcon size={20} />
             </button>
             <button
               onClick={nextSlide}
-              style={{ position: 'absolute', top: '50%', right: '12px', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.85)', border: 'none', borderRadius: '50%', width: '36px', height: '36px', cursor: 'pointer', fontWeight: 'bold' }}
+              style={{ position: 'absolute', top: '50%', right: '12px', transform: 'translateY(-50%)', background: 'rgba(255,255,255,0.9)', border: 'none', borderRadius: '50%', width: '38px', height: '38px', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: '#333' }}
             >
-              ›
+              <ChevronRightIcon size={20} />
             </button>
           </div>
 

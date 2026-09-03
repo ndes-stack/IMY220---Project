@@ -1,19 +1,21 @@
-﻿export default function Footer() {
+﻿import { ForkKnifeIcon, GlobeIcon, CameraIcon, MailIcon } from './Icons';
+
+export default function Footer() {
   return (
     <footer style={{ backgroundColor: '#ffffff', borderTop: '1px solid var(--border-color)', marginTop: '4rem', padding: '3rem 2rem 2rem 2rem' }}>
       <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
         <div>
-          <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary-color)', display: 'flex', alignItems: 'center', gap: '6px' }}>
-            <span>🍴</span>
+          <div style={{ fontSize: '1.5rem', fontWeight: 800, color: 'var(--primary-color)', display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <ForkKnifeIcon size={22} color="var(--primary-color)" />
             <span>Forkful</span>
           </div>
           <p style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', maxWidth: '280px', marginTop: '0.5rem' }}>
-            Share your plate to the world — from weeknight pasta to weekend feasts.
+            Share your plate to the world - from weeknight pasta to weekend feasts.
           </p>
           <div style={{ display: 'flex', gap: '1rem', marginTop: '1rem', color: 'var(--text-secondary)' }}>
-            <span>🌐</span>
-            <span>📷</span>
-            <span>✉</span>
+            <span style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} title="Website"><GlobeIcon size={18} /></span>
+            <span style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} title="Instagram"><CameraIcon size={18} /></span>
+            <span style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }} title="Contact"><MailIcon size={18} /></span>
           </div>
         </div>
 

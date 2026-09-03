@@ -1,4 +1,5 @@
 ﻿import { Link } from 'react-router-dom';
+import { HeartIcon } from './Icons';
 
 export default function PostPreview({ post }) {
   if (!post) return null;
@@ -41,7 +42,10 @@ export default function PostPreview({ post }) {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderTop: '1px solid #f0f0f0', paddingTop: '0.6rem' }}>
           <span style={{ fontSize: '0.8rem', color: 'var(--text-secondary)' }}>By {post.author || "chef"}</span>
-          <span style={{ fontSize: '0.85rem', color: 'var(--primary-color)', fontWeight: 600 }}>♥ {post.likes || 0}</span>
+          <span style={{ fontSize: '0.85rem', color: 'var(--primary-color)', fontWeight: 600, display: 'flex', alignItems: 'center', gap: '4px' }}>
+            <HeartIcon size={14} filled={true} color="var(--primary-color)" />
+            <span>{post.likes || 0}</span>
+          </span>
         </div>
       </div>
     </article>

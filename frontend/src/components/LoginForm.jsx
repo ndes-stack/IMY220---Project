@@ -1,5 +1,6 @@
 ﻿import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { CheckIcon, AlertCircleIcon } from './Icons';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
@@ -57,7 +58,6 @@ export default function LoginForm() {
         setServerError(data.message || 'Login failed. Please check your credentials.');
       }
     } catch (err) {
-      // If server is not yet running or offline, handle gracefully
       setServerMessage('Server reached (offline/stub fallback). Redirecting to feed...');
       setTimeout(() => {
         navigate('/home');
@@ -70,13 +70,15 @@ export default function LoginForm() {
   return (
     <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', width: '100%' }}>
       {serverMessage && (
-        <div style={{ backgroundColor: '#D8F3DC', color: '#1B4332', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem' }}>
-          ✓ {serverMessage}
+        <div style={{ backgroundColor: '#D8F3DC', color: '#1B4332', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <CheckIcon size={16} color="#1B4332" />
+          <span>{serverMessage}</span>
         </div>
       )}
       {serverError && (
-        <div style={{ backgroundColor: '#FFD6D6', color: '#9B1D20', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem' }}>
-          ✗ {serverError}
+        <div style={{ backgroundColor: '#FFD6D6', color: '#9B1D20', padding: '0.6rem', borderRadius: '4px', fontSize: '0.85rem', display: 'flex', alignItems: 'center', gap: '6px' }}>
+          <AlertCircleIcon size={16} color="#9B1D20" />
+          <span>{serverError}</span>
         </div>
       )}
 
@@ -99,7 +101,7 @@ export default function LoginForm() {
         <label style={{ display: 'block', fontSize: '0.85rem', fontWeight: 600, marginBottom: '4px' }}>Password</label>
         <input
           type="password"
-          placeholder="••••••••"
+          placeholder="Enter password"
           value={password}
           onChange={(e) => {
             setPassword(e.target.value);
