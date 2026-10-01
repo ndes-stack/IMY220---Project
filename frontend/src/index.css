@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Fraunces", "Georgia", serif;
+  --font-sans: "Work Sans", "Helvetica Neue", Arial, sans-serif;
+
+  --color-forkful-bg: #FAF8F5;
+  --color-forkful-cream: #FFF8F1;
+  --color-forkful-ink: #2B2D42;
+  --color-forkful-muted: #6C757D;
+  --color-forkful-primary: #D9653B;
+  --color-forkful-primary-dark: #C14A22;
+  --color-forkful-primary-light: #FFF0EB;
+  --color-forkful-accent: #2B9348;
+  --color-forkful-card: #FFFFFF;
+  --color-forkful-border: #E9DFD4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-forkful-bg);
+  color: var(--color-forkful-ink);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, .font-display {
+  font-family: var(--font-display);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.btn {
+  background-color: var(--color-forkful-primary);
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--color-forkful-primary-dark);
+  box-shadow: 0 4px 10px rgba(217, 101, 59, 0.3);
+  transform: translateY(-1px);
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-forkful-primary);
+  border: 1.5px solid var(--color-forkful-primary);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-forkful-primary-light);
+  color: var(--color-forkful-primary-dark);
+  box-shadow: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 0.95rem;
+  padding: 0.65rem 0.85rem;
+  border: 1.5px solid var(--color-forkful-border);
+  border-radius: 8px;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFFFFF;
+  color: var(--color-forkful-ink);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+  border-color: var(--color-forkful-primary);
+  box-shadow: 0 0 0 3px rgba(217, 101, 59, 0.15);
+}

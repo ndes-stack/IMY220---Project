@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: forkful-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    volumes:
+      - forkful-mongo-data:/data/db
+
+  backend:
+    build: ./backend
+    container_name: forkful-backend
+    restart: unless-stopped
+    ports:
+      - "5000:5000"
+    environment:
+      - PORT=5000
+      - MONGODB_URI=mongodb://mongo:27017/forkful
+      - JWT_SECRET=forkful-dev-secret-change-in-production
+    depends_on:
+      - mongo
+
+  frontend:
+    build: ./frontend
+    container_name: forkful-frontend
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+
+volumes:
+  forkful-mongo-data:
