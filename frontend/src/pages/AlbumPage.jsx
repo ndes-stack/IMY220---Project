@@ -1,8 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import PostPreview from '../components/PostPreview';
-import { useAuth } from '../context/AuthContext';
 import api from '../api';
+import { useAuth } from '../context/AuthContext';
+
 
 export default function AlbumPage() {
   const { id } = useParams();
