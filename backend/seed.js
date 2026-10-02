@@ -1,6 +1,7 @@
 // Seeds the Forkful database with minimum required demo data:
 // 2 users, 2 posts, 1 album, and 1 accepted friendship between two users.
 // Safe to run multiple times: it only inserts when collections are empty.
+//u25069366
 const bcrypt = require('bcryptjs');
 
 // Seeds the given db (a connected MongoDB Db instance) if it has no users yet.
